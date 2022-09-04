@@ -1,17 +1,21 @@
 ﻿using System;
 using Library;
 
-namespace Program
+namespace Library
 {
     class Program
     {
         static void Main(string[] args)
         {
-            string appointmentResult = AppointmentService.CreateAppointment("Steven Jhonson", "986782342", "5555-555-555", DateTime.Now, "Wall Street", "Armand");
-            Console.WriteLine(appointmentResult);
+            AppointmentData Consulta1 = new AppointmentData (" ","Steven Jhonson","", "986782342", "5555-555-555", DateTime.Now, "Wall Street", "Armand","");
+            IsValid ConsultaUno = new IsValid();
+            ConsultaUno.IsItValid(Consulta1);
+            PrintService Status1 = new PrintService(ConsultaUno);
 
-            string appointmentResult2 = AppointmentService.CreateAppointment("Ralf Manson", "", "5555-555-555", DateTime.Now, "Queen Street", "");
-            Console.WriteLine(appointmentResult2);
+            AppointmentData Consulta2 = new AppointmentData ("02","Ralf Manson","19", "5556895", "5555-555-555", DateTime.Now, "Queen Street", "Carlos","Cirujano");
+            IsValid ConsultaDos = new IsValid();
+            ConsultaDos.IsItValid(Consulta2);
+            PrintService Status2 = new PrintService(ConsultaDos);
         }
     }
 }
